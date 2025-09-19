@@ -12,6 +12,9 @@
         .auto-style2 {
             height: 29px;
         }
+        .auto-style3 {
+            height: 58px;
+        }
     </style>
 </head>
 <body>
@@ -29,7 +32,7 @@
             <tr>
                 <td>Age</td>
                 <td>
-                    <asp:TextBox ID="TextBox2" runat="server" OnTextChanged="TextBox2_TextChanged" TextMode="Number"></asp:TextBox>
+                    <asp:TextBox ID="TextBox2" runat="server" TextMode="Number"></asp:TextBox>
                 </td>
                 <td>
                     <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="Age Must Be from Range 18 - 40" MaximumValue="40" MinimumValue="18" Type="Integer" ForeColor="Maroon"></asp:RangeValidator>
@@ -63,14 +66,14 @@
                 </td>
             </tr>
             <tr>
-                <td>Gender</td>
-                <td>
+                <td class="auto-style3">Gender</td>
+                <td class="auto-style3">
                     <asp:RadioButtonList ID="RadioButtonList1" runat="server">
                         <asp:ListItem>Male</asp:ListItem>
                         <asp:ListItem>Female</asp:ListItem>
                     </asp:RadioButtonList>
                 </td>
-                <td>
+                <td class="auto-style3">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="RadioButtonList1" ErrorMessage="Required Field" ForeColor="#CC3300"></asp:RequiredFieldValidator>
                 </td>
             </tr>
@@ -110,7 +113,8 @@
             <tr>
                 <td class="auto-style2">Username</td>
                 <td class="auto-style2">
-                    <asp:TextBox ID="TextBox5" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="TextBox5" runat="server" OnTextChanged="TextBox5_TextChanged" AutoPostBack="True" Width="178px"></asp:TextBox>
+                    <asp:Label ID="Label12" runat="server" Text="Label" Visible="False"></asp:Label>
                 </td>
                 <td class="auto-style2">
                     <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="TextBox5" ErrorMessage="Required Field" ForeColor="#993300"></asp:RequiredFieldValidator>
